@@ -1,4 +1,19 @@
 body {
-  background: white;
+  background: #f3f4f4;
   font-family: "Helvetica Neue", serif;
+  margin: 0;
+  padding: 0;
 }
+
+.main {  
+  margin: 0 auto;
+  width: 720px;
+}
+
+// .header {
+//   div > {
+//     &:last-of-type {
+//       float: right;
+//     }
+//   }
+// }

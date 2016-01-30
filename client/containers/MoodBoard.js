@@ -5,7 +5,7 @@ class MoodBoard extends Component {
 
   render() {
     return (
-      <div>MoodBoard</div>
+      <div></div>
     )
   }
 }
