@@ -76,8 +76,7 @@
       "<rootDir>/node_modules/"
     ],
     "testFileExtensions": [
-      "test.js",
-      "test.jsx"
+      "test.js"
     ],
     "testDirectoryName": "client"
   }
