@@ -14,7 +14,7 @@ import rootReducer from './reducers/index'
 import Main from './containers/Main'
 import MoodBoard from './containers/MoodBoard'
 
-import 'styles/main.scss';
+var css = require('./styles/main.styl');
 
 const history = createHistory()
 const store = configureStore(rootReducer)
