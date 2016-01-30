@@ -40,8 +40,15 @@
     "ejs": "2.4.1",
     "express": "4.13.4",
     "express-ejs-layouts": "2.0.0",
+    "history": "^1.12.5",
     "react": "0.14.6",
     "react-dom": "0.14.6",
+    "react-redux": "^2.1.2",
+    "react-router": "^1.0.3",
+    "redux": "^3.0.0",
+    "redux-router": "^1.0.0-beta3",
+    "redux-simple-router": "^1.0.2",
+    "redux-thunk": "^1.0.3",
     "webpack": "1.12.12"
   },
   "devDependencies": {
