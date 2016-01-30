@@ -23,7 +23,6 @@
     "webpack",
     "boilerplate",
     "production",
-    "sass",
     "hot",
     "reload"
   ],
@@ -49,6 +48,7 @@
     "redux-router": "^1.0.0-beta3",
     "redux-simple-router": "^1.0.2",
     "redux-thunk": "^1.0.3",
+    "stylus-loader": "1.5.1",
     "webpack": "1.12.12"
   },
   "devDependencies": {
