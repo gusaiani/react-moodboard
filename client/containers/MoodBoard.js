@@ -5,7 +5,20 @@ class MoodBoard extends Component {
 
   render() {
     return (
-      <div></div>
+      <div className="moodboard">
+        <div className="item two-by-two">Product 2 × 2</div>
+        <div className="container one-by-two">
+          <div className="item">Product 1 × 1</div>
+          <div className="item">Product 1 × 1</div>
+        </div>
+        <div className="item two-by-two">Product 2 × 2</div>
+        <div className="container one-by-two">
+          <div className="item">Product 1 × 1</div>
+          <div className="item">Product 1 × 1</div>
+        </div>
+        <div className="item two-by-two">Product 2 × 2</div>
+        <div className="item two-by-two">Product 2 × 2</div>
+      </div>
     )
   }
 }

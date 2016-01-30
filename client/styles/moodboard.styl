@@ -1,0 +1,35 @@
+tile-dimension = 136px
+border-width = 1px
+tile = tile-dimension - border-width
+gutter = 10px
+double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
+
+.moodboard
+  clear both
+  float left
+  margin-top 60px
+  width 740px
+  > div
+    float left
+    height tile
+    margin 0 gutter gutter 0
+    width tile
+    > div
+      margin 0
+  .item
+    background white
+    border 1px solid #333
+    height tile
+    width tile
+  .container
+    background transparent
+    &.one-by-two
+      width tile-dimension
+  .two-by-two
+    height double-tile-dimension
+    width double-tile-dimension
+  .one-by-two
+    height double-tile-dimension
+    width tile
+    > .item
+      margin-bottom gutter
