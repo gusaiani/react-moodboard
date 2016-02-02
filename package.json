@@ -63,6 +63,7 @@
     "babel-preset-stage-0": "6.3.13",
     "coveralls": "2.11.6",
     "css-loader": "0.23.1",
+    "image-webpack-loader": "1.6.3",
     "jest-cli": "0.8.2",
     "node-sass": "3.4.2",
     "react-addons-test-utils": "0.14.6",
