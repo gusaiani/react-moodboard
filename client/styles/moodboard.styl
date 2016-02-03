@@ -7,7 +7,7 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
 .moodboard
   clear both
   float left
-  margin-top 60px
+  margin 60px 0
   width 740px
   > div
     float left
@@ -22,6 +22,13 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
     height tile
     position relative
     width tile
+    img
+      position absolute
+      max-height 100%
+      width auto
+      transform translateX(-50%)
+      left 50%
+      max-width 100%
   .container
     background transparent
     &.one-by-two

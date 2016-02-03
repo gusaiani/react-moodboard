@@ -6,6 +6,7 @@ export default class BoardItems extends Component {
 
     return (
       <div className={`item ${item.tiling}`}>
+        <img src={`/client/images/products/${item.image}`}></img>
         <button className="zoom"/>
         <button className="see-more"/>
         {item.name}
