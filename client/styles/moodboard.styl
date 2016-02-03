@@ -29,10 +29,23 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
       transform translateX(-50%)
       left 50%
       max-width 100%
+    div
+      &.name-and-brand
+        left 7px
+        position absolute
+        bottom 7px
+      &.price-and-buy
+        right 7px
+        position absolute
+        bottom 7px
   .container
     background transparent
     &.one-by-two
       width tile-dimension
+  .one-by-one
+    div
+      &.name-and-brand
+        font-size 11px
   .two-by-two
     height double-tile-dimension
     width double-tile-dimension
