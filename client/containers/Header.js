@@ -8,7 +8,7 @@ class Header extends Component {
           <h1>Awesome Title</h1>
           <div>
             <button>Bag All!</button>
-            Total Cost: $0.00
+            <span>Total Cost: $0.00</span>
           </div>
         </div>
 

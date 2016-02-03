@@ -31,21 +31,52 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
       max-width 100%
     div
       &.name-and-brand
-        left 7px
+        left 6px
         position absolute
-        bottom 7px
+        bottom 6px
       &.price-and-buy
-        right 7px
+        right 4px
         position absolute
-        bottom 7px
+        bottom 4px
+        span
+          display block
+          clear both
+          margin 0 2px 6px 0
+          text-align right
+        button.buy
+          float right
+          font-size 10px
+          padding 4px 8px
   .container
     background transparent
     &.one-by-two
       width tile-dimension
   .one-by-one
+    button
+      &.see-more
+        height: 18px
+        width: 18px
+        line-height: 1px
+        padding: 0
+        font-size: 13px
+      &.zoom
+        background-size 16px
+        height 22px
+        left 2px
+        top 2px
+        width 22px
     div
       &.name-and-brand
+        bottom 3px
         font-size 11px
+        left 3px
+        width 53%
+      &.price-and-buy
+        span
+          font-size 11px
+          margin-bottom 4px
+        button.buy
+          font-size 9px
   .two-by-two
     height double-tile-dimension
     width double-tile-dimension

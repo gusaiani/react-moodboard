@@ -15,9 +15,8 @@ export default class BoardItems extends Component {
           {item.brand}
         </div>
         <div className="price-and-buy">
-          {item.price}
-          <br/>
-          <button>Bag It!</button>
+          <span>{`$ ${item.price}`}</span>
+          <button className="buy">Bag It!</button>
         </div>
       </div>
     )
