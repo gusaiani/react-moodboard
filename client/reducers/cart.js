@@ -1,6 +1,4 @@
 import * as types from '../constants/actionTypes'
-import includes from 'lodash/collection/includes'
-
 
 const initialCart = {
   totalprice: 0.00,
@@ -10,7 +8,7 @@ const initialCart = {
 export default function boardItems(state = initialCart, action) {
   switch(action.type) {
     case types.ADD_TO_CART:
-      if (includes(state.items, action.id)) {
+      if (state.items.indexOf(action.id) != -1) {
         return state
       } else {
         return Object.assign({}, state, {
