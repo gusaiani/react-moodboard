@@ -1,8 +1,19 @@
 import React, {Component, PropTypes} from 'react'
 
 export default class BoardItems extends Component {
+  constructor(props) {
+    super(props)
+    this.handleClickOnAddToCart = this.handleClickOnAddToCart.bind(this)
+  }
+
+  handleClickOnAddToCart(e) {
+    const {item} = this.props
+    this.props.addToCart(item.id, item.price)
+  }
+
   render() {
     const {item} = this.props
+    const {dispatch} = this.props
 
     return (
       <div className={`item ${item.tiling}`}>
@@ -16,7 +27,7 @@ export default class BoardItems extends Component {
         </div>
         <div className="price-and-buy">
           <span>{`$ ${item.price}`}</span>
-          <button className="buy">Bag It!</button>
+          <button className="buy" onClick={this.handleClickOnAddToCart}>Bag It!</button>
         </div>
       </div>
     )
