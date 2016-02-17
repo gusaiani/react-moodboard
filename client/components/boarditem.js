@@ -7,8 +7,8 @@ export default class BoardItems extends Component {
   }
 
   handleClickOnAddToCart(e) {
-    const {item} = this.props
-    this.props.addToCart(item.id, item.price)
+    const {item, addToCart} = this.props
+    addToCart(item.id, item.price)
   }
 
   render() {

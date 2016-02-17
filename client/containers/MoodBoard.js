@@ -24,7 +24,7 @@ class MoodBoard extends Component {
 
 function renderItemContainer(container, addToCart) {
   return (
-    <div className="container one-by-two">
+    <div className="container one-by-two" key={Math.random()}>
       {container.items.map((item) => {
         return (<BoardItem item={item} key={item.id} addToCart={addToCart}/>)
       })}

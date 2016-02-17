@@ -17,6 +17,12 @@ export default function boardItems(state = initialCart, action) {
         })
       }
 
+    case types.ADD_ALL_TO_CART:
+      return Object.assign({}, state, {
+        totalprice: action.totalPrice,
+        items: action.ids
+      })
+
     default:
       return state
   }
