@@ -46,7 +46,7 @@ export default class BoardItems extends Component {
     return (
       <div className={`item ${item.tiling}`}>
         <img src={`/client/images/products/${item.image}`}></img>
-        {areDetailsDisplayed && <ItemDetails/>}
+        {areDetailsDisplayed && <ItemDetails description={item.description}/>}
         <button className="zoom"/>
         {this.renderDetailsButton(areDetailsDisplayed)}
 
