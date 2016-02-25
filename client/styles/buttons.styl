@@ -11,7 +11,7 @@ button
     background dark-pink
   &:active
     background very-dark-pink
-  &.see-more
+  &.show-details
     display inline-block
     font-size 18px
     height 24px
@@ -21,6 +21,9 @@ button
     text-align center
     top 4px
     width 24px
+    &.active
+      &:after
+        content "-"
     &:after
       color white
       content "+"
