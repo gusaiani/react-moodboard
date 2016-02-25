@@ -5,55 +5,56 @@ import {addToCart} from '../actions/cart'
 import {seeMore} from '../actions/boardItems'
 
 import BoardItem from '../components/boarditem'
-import ItemDetails from '../components/itemDetails'
 
 class MoodBoard extends Component {
   constructor(props) {
     super(props)
-    this.setMoodboardClass = this.setMoodboardClass.bind(this)
-  }
-
-  setMoodboardClass() {
-    const {boardItems} = this.props
-    const {seeMoreItem} = boardItems
-
-    if (seeMoreItem) {
-      return 'hidden'
-    } else {
-      return 'visible'
-    }
+    this.renderItemContainer = this.renderItemContainer.bind(this)
   }
 
   render() {
     const {boardItems, addToCart, seeMore} = this.props
-    const moodboardClassName = this.setMoodboardClass()
 
     return (
       <div>
-        <div className={`moodboard ${moodboardClassName}`}>
+        <div className="moodboard">
           {boardItems.items.map((item) => {
             if (item.container) {
-              return renderItemContainer(item, addToCart)
+              return this.renderItemContainer(item)
             } else {
-              return (<BoardItem item={item} key={item.id} addToCart={addToCart} seeMore={seeMore}/>)
+              return (
+                <BoardItem
+                  item={item}
+                  key={item.id}
+                  addToCart={addToCart}
+                  seeMore={seeMore}
+                  itemToDisplayDetails={boardItems.seeMoreItem}/>
+              )
             }
           })}
         </div>
-
-        {(boardItems.seeMoreItem !== null) && <ItemDetails boardItems={boardItems}/>}
       </div>
     )
   }
-}
 
-function renderItemContainer(container, addToCart) {
-  return (
-    <div className="container one-by-two" key={Math.random()}>
-      {container.items.map((item) => {
-        return (<BoardItem item={item} key={item.id} addToCart={addToCart} seeMore={seeMore}/>)
-      })}
-    </div>
-  )
+  renderItemContainer(container) {
+    const {boardItems, addToCart, seeMore} = this.props
+
+    return (
+      <div className="container one-by-two" key={Math.random()}>
+        {container.items.map((item) => {
+          return (
+            <BoardItem
+              item={item}
+              key={item.id}
+              addToCart={addToCart}
+              seeMore={seeMore}
+              itemToDisplayDetails={boardItems.seeMoreItem}/>
+          )
+        })}
+      </div>
+    )
+  }
 }
 
 function mapStateToProps(state) {

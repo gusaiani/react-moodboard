@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 
+import ItemDetails from '../components/itemDetails'
+
 export default class BoardItems extends Component {
   constructor(props) {
     super(props)
@@ -17,12 +19,18 @@ export default class BoardItems extends Component {
     seeMore(item.id)
   }
 
+  areDetailsDisplayed(itemId, itemToDisplayDetails) {
+    if (itemId === itemToDisplayDetails) return true
+    return false
+  }
+
   render() {
-    const {item} = this.props
+    const {item, itemToDisplayDetails} = this.props
 
     return (
       <div className={`item ${item.tiling}`}>
         <img src={`/client/images/products/${item.image}`}></img>
+        {this.areDetailsDisplayed(item.id, itemToDisplayDetails) && <ItemDetails/>}
         <button className="zoom"/>
         <button className="see-more" onClick={this.handleClickOnSeeMore}/>
         <div className="name-and-brand">
