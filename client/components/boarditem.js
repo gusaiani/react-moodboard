@@ -6,7 +6,8 @@ export default class BoardItems extends Component {
   constructor(props) {
     super(props)
     this.handleClickOnAddToCart = this.handleClickOnAddToCart.bind(this)
-    this.handleClickOnSeeMore = this.handleClickOnSeeMore.bind(this)
+    this.handleClickOnShowDetails = this.handleClickOnShowDetails.bind(this)
+    this.handleClickOnHideDetails = this.handleClickOnHideDetails.bind(this)
   }
 
   handleClickOnAddToCart() {
@@ -14,9 +15,14 @@ export default class BoardItems extends Component {
     addToCart(item.id, item.price)
   }
 
-  handleClickOnSeeMore(e) {
-    const {item, seeMore} = this.props
-    seeMore(item.id)
+  handleClickOnShowDetails() {
+    const {item, showDetails} = this.props
+    showDetails(item.id)
+  }
+
+  handleClickOnHideDetails() {
+    const {item, hideDetails} = this.props
+    hideDetails(item.id)
   }
 
   areDetailsDisplayed(itemId, itemToDisplayDetails) {
@@ -24,15 +30,26 @@ export default class BoardItems extends Component {
     return false
   }
 
+  renderDetailsButton(areDetailsDisplayed) {
+    if (areDetailsDisplayed) {
+      return <button className="show-details active" onClick={this.handleClickOnHideDetails}/>
+    } else {
+      return <button className="show-details" onClick={this.handleClickOnShowDetails}/>
+    }
+  }
+
   render() {
     const {item, itemToDisplayDetails} = this.props
+
+    const areDetailsDisplayed = this.areDetailsDisplayed(item.id, itemToDisplayDetails)
 
     return (
       <div className={`item ${item.tiling}`}>
         <img src={`/client/images/products/${item.image}`}></img>
-        {this.areDetailsDisplayed(item.id, itemToDisplayDetails) && <ItemDetails/>}
+        {areDetailsDisplayed && <ItemDetails/>}
         <button className="zoom"/>
-        <button className="see-more" onClick={this.handleClickOnSeeMore}/>
+        {this.renderDetailsButton(areDetailsDisplayed)}
+
         <div className="name-and-brand">
           {item.name}
           <br/>

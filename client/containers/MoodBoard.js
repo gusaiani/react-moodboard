@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 
 import {addToCart} from '../actions/cart'
-import {seeMore} from '../actions/boardItems'
+import {showDetails, hideDetails} from '../actions/boardItems'
 
 import BoardItem from '../components/boarditem'
 
@@ -13,7 +13,7 @@ class MoodBoard extends Component {
   }
 
   render() {
-    const {boardItems, addToCart, seeMore} = this.props
+    const {boardItems, addToCart, showDetails, hideDetails} = this.props
 
     return (
       <div>
@@ -27,7 +27,8 @@ class MoodBoard extends Component {
                   item={item}
                   key={item.id}
                   addToCart={addToCart}
-                  seeMore={seeMore}
+                  showDetails={showDetails}
+                  hideDetails={hideDetails}
                   itemToDisplayDetails={boardItems.seeMoreItem}/>
               )
             }
@@ -38,7 +39,7 @@ class MoodBoard extends Component {
   }
 
   renderItemContainer(container) {
-    const {boardItems, addToCart, seeMore} = this.props
+    const {boardItems, addToCart, showDetails, hideDetails} = this.props
 
     return (
       <div className="container one-by-two" key={Math.random()}>
@@ -48,7 +49,8 @@ class MoodBoard extends Component {
               item={item}
               key={item.id}
               addToCart={addToCart}
-              seeMore={seeMore}
+              showDetails={showDetails}
+              hideDetails={hideDetails}
               itemToDisplayDetails={boardItems.seeMoreItem}/>
           )
         })}
@@ -66,5 +68,6 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps, {
   addToCart,
-  seeMore
+  showDetails,
+  hideDetails
 })(MoodBoard)
