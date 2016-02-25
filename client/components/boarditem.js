@@ -4,22 +4,27 @@ export default class BoardItems extends Component {
   constructor(props) {
     super(props)
     this.handleClickOnAddToCart = this.handleClickOnAddToCart.bind(this)
+    this.handleClickOnSeeMore = this.handleClickOnSeeMore.bind(this)
   }
 
-  handleClickOnAddToCart(e) {
+  handleClickOnAddToCart() {
     const {item, addToCart} = this.props
     addToCart(item.id, item.price)
   }
 
+  handleClickOnSeeMore(e) {
+    const {item, seeMore} = this.props
+    seeMore(item.id)
+  }
+
   render() {
     const {item} = this.props
-    const {dispatch} = this.props
 
     return (
       <div className={`item ${item.tiling}`}>
         <img src={`/client/images/products/${item.image}`}></img>
         <button className="zoom"/>
-        <button className="see-more"/>
+        <button className="see-more" onClick={this.handleClickOnSeeMore}/>
         <div className="name-and-brand">
           {item.name}
           <br/>
