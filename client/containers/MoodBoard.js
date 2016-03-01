@@ -13,7 +13,7 @@ class MoodBoard extends Component {
   }
 
   render() {
-    const {boardItems, addToCart, showDetails, hideDetails} = this.props
+    const {products, boardItems, addToCart, showDetails, hideDetails} = this.props
 
     return (
       <div>
@@ -24,8 +24,8 @@ class MoodBoard extends Component {
             } else {
               return (
                 <BoardItem
-                  item={item}
-                  key={item.id}
+                  item={products[item]}
+                  key={item}
                   addToCart={addToCart}
                   showDetails={showDetails}
                   hideDetails={hideDetails}
@@ -39,15 +39,15 @@ class MoodBoard extends Component {
   }
 
   renderItemContainer(container) {
-    const {boardItems, addToCart, showDetails, hideDetails} = this.props
+    const {boardItems, addToCart, showDetails, hideDetails, products} = this.props
 
     return (
       <div className="container one-by-two" key={Math.random()}>
         {container.items.map((item) => {
           return (
             <BoardItem
-              item={item}
-              key={item.id}
+              item={products[item]}
+              key={item}
               addToCart={addToCart}
               showDetails={showDetails}
               hideDetails={hideDetails}
@@ -60,8 +60,9 @@ class MoodBoard extends Component {
 }
 
 function mapStateToProps(state) {
-  const {boardItems} = state
+  const {boardItems, products} = state
   return {
+    products,
     boardItems
   }
 }
