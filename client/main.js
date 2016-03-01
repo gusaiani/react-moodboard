@@ -13,6 +13,7 @@ import rootReducer from './reducers/index'
 
 import Main from './containers/Main'
 import MoodBoard from './containers/MoodBoard'
+import Product from './containers/Product'
 
 var css = require('./styles/main.styl');
 
@@ -27,6 +28,7 @@ render(
       <Route path="/" component={Main}>
         <IndexRoute component={MoodBoard}/>
         <Route path="moodboard" component={MoodBoard}/>
+        <Route path="/product/:productId" component={Product}/>
       </Route>
     </Router>
   </Provider>,
