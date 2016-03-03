@@ -1,13 +1,30 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 import _ from 'lodash'
+import {Link} from 'react-router'
 
 class Product extends Component {
   render() {
+    const {product} = this.props
+
     return (
-      <div>
-        You are at the stub page for product {this.props.id}.
-        We’ll make it look like something soon.
+      <div className="product">
+        <Link to="/" className="product-nav-link active"/>
+        <div>
+          <img src={`/client/images/products/${product.image}`}></img>
+          <p>
+            {product.description}
+          </p>
+          <p>
+            {product.name}
+          </p>
+          <p>
+            {product.brand}
+          </p>
+        </div>
+        <div>
+          Choose that one item you love the most
+        </div>
       </div>
     )
   }
@@ -15,18 +32,11 @@ class Product extends Component {
 
 function mapStateToProps(state, ownProps) {
   const productId = ownProps.params.productId
-  const product = _.find(state.boardItems.items, function(product) {
-    console.log(product)
-    return product.id === productId
-  })
+  const product = state.products[productId]
 
-  console.log(state.boardItems.items)
-  console.log(product)
   return {
-    id: ownProps.params.productId,
     product: product
   }
 }
 
-export default connect(mapStateToProps, {
-})(Product)
+export default connect(mapStateToProps, {})(Product)
