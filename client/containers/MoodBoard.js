@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux'
 
 import {addToCart} from '../actions/cart'
-import {showDetails, hideDetails} from '../actions/boardItems'
 
 import BoardItem from '../components/boarditem'
 
@@ -68,7 +67,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  addToCart,
-  showDetails,
-  hideDetails
+  addToCart
 })(MoodBoard)
