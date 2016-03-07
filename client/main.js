@@ -6,7 +6,6 @@ import { Router, Route, IndexRoute } from 'react-router'
 import { createHistory } from 'history'
 import { syncReduxAndRouter } from 'redux-simple-router'
 import thunk from 'redux-thunk'
-
 import configureStore from './store/configureStore'
 
 import rootReducer from './reducers/index'
