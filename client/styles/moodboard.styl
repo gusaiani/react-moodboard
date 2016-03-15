@@ -2,7 +2,7 @@ tile-dimension = 184px
 border-width = 1px
 tile = tile-dimension - border-width
 gutter = 10px
-double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
+double-tile-dimension = (tile * 2) + gutter + (border-width * 2) + 1
 
 .moodboard
   clear both
@@ -30,9 +30,10 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
     > *
       opacity 0
       transition: opacity .4s ease-in-out
-    img
+    .image-container
       display block
       opacity 1
+    img
       position absolute
       max-height 100%
       width auto
@@ -99,6 +100,9 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2)
     width double-tile-dimension
   .one-by-two
     height double-tile-dimension
-    width tile
+    width tile - 1
     > .item
       margin-bottom gutter
+      width tile - 1
+      &:first-child
+        margin-bottom gutter + 1

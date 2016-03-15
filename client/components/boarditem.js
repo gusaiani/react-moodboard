@@ -22,7 +22,9 @@ export default class BoardItems extends Component {
 
     return (
       <div className={`item ${item.tiling}`}>
-        <img src={`/client/images/products/${item.image}`}></img>
+        <Link to={`/product/${item.id}`} className="image-container">
+          <img src={`/client/images/products/${item.image}`} />
+        </Link>
 
         <Link to={`/product/${item.id}`} className="product-nav-link"/>
 
