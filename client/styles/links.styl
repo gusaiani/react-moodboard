@@ -8,28 +8,27 @@ a.product-nav-link
   outline none
   text-decoration none
   text-transform uppercase
+  display inline-block
+  font-size 18px
+  height 24px
+  line-height 5px
+  position absolute
+  right 4px
+  text-align center
+  top 4px
+  width 24px
   &:hover
     background dark-pink
   &:active
     background very-dark-pink
-  &.product-nav-link
-    display inline-block
-    font-size 18px
-    height 24px
-    line-height 2px
-    position absolute
-    right 4px
-    text-align center
-    top 4px
-    width 24px
-    &.active
-      &:after
-        content "-"
+  &.active
     &:after
-      color white
-      content "+"
-      position relative
-      top 9px
+      content "-"
+  &:after
+    color white
+    content "+"
+    position relative
+    top 9px
 
 a.add-to-cart
   background regular-pink

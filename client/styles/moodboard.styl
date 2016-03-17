@@ -1,3 +1,5 @@
+@import "fonts"
+
 tile-dimension = 184px
 border-width = 1px
 tile = tile-dimension - border-width
@@ -20,7 +22,8 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2) + 1
       margin 0
   .item
     background white
-    border 1px solid #333
+    border 1px solid white
+    box-shadow 0 0 4px rgba(0, 0, 0, 0.2)
     height tile
     position relative
     width tile
@@ -61,6 +64,8 @@ double-tile-dimension = (tile * 2) + gutter + (border-width * 2) + 1
         span
           font-size 16px
           line-height 22px
+          &:first-of-type
+            sans-bold()
   .container
     background transparent
     &.one-by-two
