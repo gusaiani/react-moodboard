@@ -10,12 +10,10 @@
   width 966px
   > div
     margin-top 60px
-    padding 20px
     position relative
     &:first-of-type
       border-right 1px solid #ccc
-      flex 3
-      width 75%
+      flex 0 0 72%
       div.price-and-buy
         right 20px
         bottom 20px
@@ -36,25 +34,33 @@
           margin 0
           max-width 90%
     &:last-of-type
-      flex 1
+      flex 0 0 28%
       h5
         font-size 12px
         font-weight normal
         margin 0 0 40px
-      a
-        color black
-        display block
-        float none
-        margin 0 0 30px
-        text-decoration none
-        &:hover
-          p
-            text-decoration underline
-        img
-          display block
-          margin 0 auto
-          width 70px
-        p
+        text-align center
+        width 100%
+      div
+        display flex
+        flex-wrap wrap
+        a
           color black
-          font-size 10px
-          text-align center
+          display block
+          flex-grow 1
+          float left
+          margin 0 0 30px
+          text-decoration none
+          width 50%
+          &:hover
+            p
+              text-decoration underline
+          img
+            display block
+            height 50px
+            margin 0 auto
+            width auto
+          p
+            color black
+            font-size 10pt
+            text-align center

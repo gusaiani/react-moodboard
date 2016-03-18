@@ -41,17 +41,19 @@ class Product extends Component {
         </div>
         <div>
           <h5>
-            Choose that one item you love the most
+            Choose the category you love the most
           </h5>
 
-          {relatedProducts.map((relatedProduct) => {
-            return (
-              <Link to={`/product/${relatedProduct.id}`} key={relatedProduct.id}>
-                <img src={`/client/images/products/large/${relatedProduct.image}`}></img>
-                <p>{relatedProduct.name}</p>
-              </Link>
-            )
-          })}
+          <div>
+            {relatedProducts.map((relatedProduct) => {
+              return (
+                <Link to={`/product/${relatedProduct.id}`} key={relatedProduct.id}>
+                  <img src={`/client/images/products/large/${relatedProduct.image}`}></img>
+                  <p>{relatedProduct.name}</p>
+                </Link>
+              )
+            })}
+          </div>
         </div>
       </div>
     )
